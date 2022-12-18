@@ -1,16 +1,18 @@
 import {put} from 'redux-saga/effects';
 import Action from '../Types/Action';
 import getMuseumSpecificData from '../service-file/getMuseumSpecificData';
+import {
+  dispatchDataSpecificAction,
+  dispatchErrorSpecific,
+  dispatchLoadingSpecific,
+} from '../Actions';
 
 export default function* GetMuseumSpecificData(action: Action): any {
-  yield put({type: 'LoadingSpecific'});
+  yield put(dispatchLoadingSpecific());
   try {
     const response = yield getMuseumSpecificData(action.payload);
-    yield put({
-      type: 'DataSpecific',
-      payload: response.data,
-    });
+    yield put(dispatchDataSpecificAction(response));
   } catch (error) {
-    yield put({type: 'ErrorSpecific'});
+    yield put(dispatchErrorSpecific());
   }
 }

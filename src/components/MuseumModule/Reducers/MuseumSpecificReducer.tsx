@@ -1,5 +1,6 @@
 import Reducer from '../Types/Reducer';
 import Action from '../Types/Action';
+import {MuseumActions} from '../Actions/constants';
 const initialmuseumSpecificState: Reducer = {
   isLoading: false,
   data: {},
@@ -11,11 +12,11 @@ export default function museumReducerSpecific(
   action: Action,
 ) {
   switch (action.type) {
-    case 'LoadingSpecific':
+    case MuseumActions.LoadingSpecific:
       return {...state, isLoading: true};
-    case 'DataSpecific':
+    case MuseumActions.DataSpecific:
       return {...state, isLoading: false, data: action.payload};
-    case 'ErrorSpecific':
+    case MuseumActions.ErrorSpecific:
       return {...state, isLoading: false, error: true};
     default:
       return state;

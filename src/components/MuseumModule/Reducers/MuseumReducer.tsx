@@ -1,5 +1,6 @@
 import Reducer from '../Types/Reducer';
 import Action from '../Types/Action';
+import {MuseumActions} from '../Actions/constants';
 const initialmuseumState: Reducer = {isLoading: false, data: [], error: false};
 
 export default function museumReducer(
@@ -7,11 +8,11 @@ export default function museumReducer(
   action: Action,
 ) {
   switch (action.type) {
-    case 'Loading':
+    case MuseumActions.LOADING:
       return {...state, isLoading: true};
-    case 'Data':
+    case MuseumActions.Data:
       return {...state, isLoading: false, data: action.payload};
-    case 'Error':
+    case MuseumActions.Error:
       return {...state, isLoading: false, error: true};
     default:
       return state;
