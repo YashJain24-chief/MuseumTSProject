@@ -1,10 +1,10 @@
 import {FC} from 'react';
 import {TouchableOpacity, Text} from 'react-native';
-import {MuseumStyles} from '../Styles/Museum';
+import {MuseumStyles} from '../Styles/MuseumStyles';
 
 type Props = {
-  item: any; //try removing any if possible
-  fetchDetails: any; //try removing any if possible
+  item: number;
+  fetchDetails: (item: number) => void;
 };
 
 const MuseumItem: FC<Props> = ({item, fetchDetails}) => {

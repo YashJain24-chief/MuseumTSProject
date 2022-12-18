@@ -1,4 +1,6 @@
-const initialmuseumSpecificState = {
+import Reducer from '../Types/Reducer';
+import Action from '../Types/Action';
+const initialmuseumSpecificState: Reducer = {
   isLoading: false,
   data: {},
   error: false,
@@ -6,7 +8,7 @@ const initialmuseumSpecificState = {
 
 export default function museumReducerSpecific(
   state: typeof initialmuseumSpecificState = initialmuseumSpecificState,
-  action: any,
+  action: Action,
 ) {
   switch (action.type) {
     case 'LoadingSpecific':

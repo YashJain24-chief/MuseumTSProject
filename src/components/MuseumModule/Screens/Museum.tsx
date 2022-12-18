@@ -10,8 +10,15 @@ import useMuseumData from '../custom-hooks/useMuseumData';
 import {dispatchMuseumDataAction} from '../Actions/index';
 import {dispatchMuseumSpecificDataAction} from '../Actions/index';
 
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+
+type NavigationProps = {
+  Museum: undefined;
+  MuseumDetails: undefined;
+};
+
 type Props = {
-  navigation: any; //try removing any if possible
+  navigation: NativeStackNavigationProp<NavigationProps>;
 };
 
 const Museum: FC<Props> = ({navigation}) => {
@@ -31,7 +38,7 @@ const Museum: FC<Props> = ({navigation}) => {
     }
   }, [museumSpecificData.isLoading, museumSpecificData.data]);
 
-  async function fetchDetails(id: number) {
+  function fetchDetails(id: number) {
     dispatch(dispatchMuseumSpecificDataAction(id));
   }
 
@@ -46,11 +53,11 @@ const Museum: FC<Props> = ({navigation}) => {
   return (
     <View>
       <FlatList
-        data={museumData.museumData}
+        data={museumData.data}
         renderItem={({item}) => (
           <MuseumItem item={item} fetchDetails={fetchDetails} />
         )}
-        keyExtractor={(item: any, index: any) => index} //try removing any if possible
+        keyExtractor={(item: number, index: number) => String(index)}
       />
     </View>
   );

@@ -2,7 +2,7 @@ import {FC} from 'react';
 import {View, Text, Image} from 'react-native';
 import useMuseumData from '../custom-hooks/useMuseumData';
 
-import MuseumDetailStyles from '../Styles/MuseumDetail';
+import MuseumDetailStyles from '../Styles/MuseumDetailStyles';
 
 const MuseumDetails: FC = () => {
   const {museumSpecificData} = useMuseumData();

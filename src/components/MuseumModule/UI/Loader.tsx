@@ -1,9 +1,15 @@
 import {View, Text} from 'react-native';
+import {FC} from 'react';
 
-export default function Loader({textToBeShown}: any) {
+type Props = {
+  textToBeShown: string;
+};
+
+const Loader: FC<Props> = ({textToBeShown}) => {
   return (
     <View>
       <Text data-testID="textToBeShown">{textToBeShown}</Text>
     </View>
   );
-}
+};
+export default Loader;
