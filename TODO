@@ -2,6 +2,5 @@
 2. Convert to typescript
 3. Creating constants for action types and creating separate actions instead of passing object directly inside dispatch 
 4. Moving useSelector to a separate file - solved this using custom hooks
-5. Navigating to details screen only when data is available
-6. Move Styling to separate file
-7. Rename Saga files to something more redable
+5. Move Styling to separate file
+6. Rename Saga files to something more redable
