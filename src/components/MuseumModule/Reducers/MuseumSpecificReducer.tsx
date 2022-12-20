@@ -1,6 +1,6 @@
 import Reducer from '../Types/Reducer';
 import Action from '../Types/Action';
-import {MuseumActions} from '../Actions/constants';
+import {MuseumActions} from '../constants/ActionConstants';
 const initialmuseumSpecificState: Reducer = {
   isLoading: false,
   data: {},

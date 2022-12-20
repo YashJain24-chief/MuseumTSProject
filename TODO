@@ -1,6 +1,13 @@
 1. Change the folder structure
 2. Convert to typescript
-3. Creating constants for action types and creating separate actions instead of passing object directly inside dispatch 
+3. Creating constants for action types and creating separate actions instead of passing object directly inside dispatch
 4. Moving useSelector to a separate file - solved this using custom hooks
 5. Move Styling to separate file
 6. Rename Saga files to something more redable
+
+New TODO
+
+1. move all types to Types folder
+2. just create a separate function for useSelector callback and pass state to it instead of using custom hook
+3. Rename Reducer type to something more meaningful
+4. Rename Loader component

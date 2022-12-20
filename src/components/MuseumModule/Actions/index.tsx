@@ -1,4 +1,4 @@
-import {MuseumActions} from './constants';
+import {MuseumActions} from '../constants/ActionConstants';
 
 export function dispatchMuseumDataAction() {
   return {
